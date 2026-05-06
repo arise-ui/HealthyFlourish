@@ -1,0 +1,500 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LumiHair – Hair Care Collection</title>
+    <link rel="stylesheet" href="index.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
+  </head>
+  <body>
+    <!-- TOP ANNOUNCEMENT BAR
+    <div class="announcement-bar">
+      <p>
+        ✨ Free delivery on orders over KSh 3,500 &nbsp;|&nbsp; Shop the finest
+        hair care range in Kenya
+      </p>
+    </div> -->
+
+    <!-- HEADER -->
+    <header class="header">
+      <div class="header-top">
+        <div class="header-left">
+          <button class="icon-btn" id="menu-toggle" aria-label="Menu">
+            <i class="fas fa-bars"></i>
+          </button>
+          <div class="search-wrap">
+            <i class="fas fa-search search-icon"></i>
+            <input
+              type="text"
+              placeholder="Search products…"
+              class="search-input"
+            />
+          </div>
+        </div>
+
+        <a href="#" class="logo">Wahu<span>Hair</span></a>
+
+        <div class="header-right">
+          <a href="#" class="icon-btn" aria-label="Account"
+            ><i class="far fa-user"></i
+          ></a>
+          <a href="#" class="icon-btn wishlist-btn" aria-label="Wishlist"
+            ><i class="far fa-heart"></i
+          ></a>
+          <a href="#" class="icon-btn cart-btn" aria-label="Cart">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-badge">3</span>
+          </a>
+        </div>
+      </div>
+
+      <!-- NAV -->
+      <nav class="nav" id="main-nav">
+        <ul class="nav-list">
+          <li class="nav-item has-dropdown">
+            <a href="#">New In <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown">
+              <a href="#">Just Dropped</a>
+              <a href="#">Bestsellers</a>
+              <a href="#">True Beauty Collection</a>
+            </div>
+          </li>
+          <li class="nav-item has-dropdown">
+            <a href="#">Hair Care <i class="fas fa-chevron-down"></i></a>
+            <div class="dropdown">
+              <a href="#">Shampoos</a>
+              <a href="#">Conditioners</a>
+              <a href="#">Hair Oils</a>
+              <a href="#">Treatments</a>
+              <a href="#">Styling</a>
+            </div>
+          </li>
+          <li class="nav-item"><a href="#">Skin Care</a></li>
+          <li class="nav-item"><a href="#">Body &amp; Bath</a></li>
+          <li class="nav-item"><a href="#">Makeup</a></li>
+          <li class="nav-item"><a href="#">Tools &amp; Brushes</a></li>
+          <li class="nav-item highlight"><a href="#">Sale</a></li>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- MOBILE DRAWER -->
+    <div class="mobile-drawer" id="mobile-drawer">
+      <button class="drawer-close" id="drawer-close">
+        <i class="fas fa-times"></i>
+      </button>
+      <div class="drawer-trending">
+        <p class="drawer-label">Trending</p>
+        <a href="#">Conditioners</a>
+        <a href="#">Hair Oils</a>
+        <a href="#">SheaMoisture</a>
+        <a href="#">Shampoos</a>
+        <a href="#">Hair Treatments</a>
+      </div>
+    </div>
+    <div class="drawer-overlay" id="drawer-overlay"></div>
+
+    <!-- BREADCRUMB -->
+    <div class="breadcrumb-bar">
+      <div class="container">
+        <span><a href="#">Home</a></span>
+        <span class="sep">›</span>
+        <span class="current">Hair Care</span>
+      </div>
+    </div>
+
+    <main class="main-content container">
+      <!-- PAGE TITLE + FILTERS -->
+      <div class="collection-header">
+        <h1 class="collection-title">Hair Care</h1>
+        <p class="collection-count">128 products</p>
+      </div>
+
+      <!-- TRENDING PILLS -->
+      <div class="trending-row">
+        <span class="trending-label">Trending:</span>
+        <div class="pill-list">
+          <a href="#" class="pill active">All</a>
+          <a href="#" class="pill">Shampoos</a>
+          <a href="#" class="pill">Conditioners</a>
+          <a href="#" class="pill">Hair Oils</a>
+          <a href="#" class="pill">SheaMoisture</a>
+          <a href="#" class="pill">Treatments</a>
+          <a href="#" class="pill">Styling</a>
+        </div>
+      </div>
+
+      <!-- FILTER + SORT BAR -->
+      <div class="filter-bar">
+        <div class="filter-left">
+          <button class="filter-btn">
+            <i class="fas fa-sliders-h"></i> Filter
+          </button>
+          <span class="filter-tag">Conditioners <button>&times;</button></span>
+          <span class="filter-tag"
+            >Under KSh 2,000 <button>&times;</button></span
+          >
+        </div>
+        <div class="sort-wrap">
+          <label for="sort">Sort by:</label>
+          <select id="sort">
+            <option>Featured</option>
+            <option>Price: Low to High</option>
+            <option>Price: High to Low</option>
+            <option>Newest</option>
+            <option>Bestselling</option>
+          </select>
+        </div>
+      </div>
+
+      <!-- PRODUCT GRID -->
+      <div class="product-grid">
+        <!-- Product 1 -->
+        <div class="product-card">
+          <div class="card-image-wrap">
+            <div class="card-badge badge-sold-out">Sold Out</div>
+            <img
+              src="https://images.unsplash.com/photo-1574182245530-967d9b3831af?w=400&q=80"
+              alt="Argan Foaming Mousse"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-actions">
+              <button class="card-action-btn" title="Add to Wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="card-action-btn" title="Quick View">
+                <i class="far fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Creme of Nature</p>
+            <h3 class="card-title">
+              Argan Oil Style &amp; Shine Foaming Mousse 207ml
+            </h3>
+            <p class="card-price">KSh 1,150</p>
+            <button class="card-cta sold-out-cta" disabled>Sold Out</button>
+          </div>
+        </div>
+
+        <!-- Product 2 -->
+        <div class="product-card">
+          <div class="card-image-wrap">
+            <div class="card-badge badge-new">New</div>
+            <img
+              src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400&q=80"
+              alt="Mizani Rose H2O Hairdress"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-actions">
+              <button class="card-action-btn" title="Add to Wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="card-action-btn" title="Quick View">
+                <i class="far fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Mizani</p>
+            <h3 class="card-title">Rose H2O Hairdress 226.8g</h3>
+            <p class="card-price">KSh 4,250</p>
+            <button class="card-cta">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Product 3 -->
+        <div class="product-card">
+          <div class="card-image-wrap">
+            <div class="card-badge badge-sold-out">Sold Out</div>
+            <img
+              src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400&q=80"
+              alt="Moisture Rich Shampoo"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-actions">
+              <button class="card-action-btn" title="Add to Wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="card-action-btn" title="Quick View">
+                <i class="far fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Mizani</p>
+            <h3 class="card-title">Moisture Fusion Rich Shampoo 500ml</h3>
+            <p class="card-price"><em>from</em> KSh 4,720</p>
+            <button class="card-cta sold-out-cta" disabled>Sold Out</button>
+          </div>
+        </div>
+
+        <!-- Product 4 -->
+        <div class="product-card featured-card">
+          <div class="card-image-wrap">
+            <div class="card-badge badge-bestseller">Bestseller</div>
+            <img
+              src="https://images.unsplash.com/photo-1585751119414-ef2636f8aede?w=400&q=80"
+              alt="SheaMoisture Curl Cream"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-actions">
+              <button class="card-action-btn" title="Add to Wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="card-action-btn" title="Quick View">
+                <i class="far fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-brand">SheaMoisture</p>
+            <h3 class="card-title">
+              Coconut &amp; Hibiscus Curl Enhancing Smoothie 340g
+            </h3>
+            <p class="card-price">KSh 2,800</p>
+            <button class="card-cta">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Product 5 -->
+        <div class="product-card">
+          <div class="card-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1631390935814-50d2d4cbed6e?w=400&q=80"
+              alt="ORS Olive Oil"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-actions">
+              <button class="card-action-btn" title="Add to Wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="card-action-btn" title="Quick View">
+                <i class="far fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-brand">ORS</p>
+            <h3 class="card-title">
+              Olive Oil Incredibly Rich Oil Moisturising Hair Lotion 300ml
+            </h3>
+            <p class="card-price">KSh 1,450</p>
+            <button class="card-cta">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Product 6 -->
+        <div class="product-card">
+          <div class="card-image-wrap">
+            <div class="card-badge badge-sale">−20%</div>
+            <img
+              src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=400&q=80"
+              alt="Cantu Shea Butter"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-actions">
+              <button class="card-action-btn" title="Add to Wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="card-action-btn" title="Quick View">
+                <i class="far fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Cantu</p>
+            <h3 class="card-title">
+              Shea Butter for Natural Hair Coconut Curling Cream 340g
+            </h3>
+            <div class="price-row">
+              <p class="card-price">KSh 1,200</p>
+              <p class="card-price-old">KSh 1,500</p>
+            </div>
+            <button class="card-cta">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Product 7 -->
+        <div class="product-card">
+          <div class="card-image-wrap">
+            <img
+              src="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400&q=80"
+              alt="Jamaican Black Castor Oil"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-actions">
+              <button class="card-action-btn" title="Add to Wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="card-action-btn" title="Quick View">
+                <i class="far fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Tropic Isle Living</p>
+            <h3 class="card-title">Jamaican Black Castor Oil 4oz</h3>
+            <p class="card-price">KSh 1,850</p>
+            <button class="card-cta">Add to Cart</button>
+          </div>
+        </div>
+
+        <!-- Product 8 -->
+        <div class="product-card">
+          <div class="card-image-wrap">
+            <div class="card-badge badge-new">New</div>
+            <img
+              src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&q=80"
+              alt="Dark &amp; Lovely Moisture Seal"
+              class="card-img"
+              loading="lazy"
+            />
+            <div class="card-actions">
+              <button class="card-action-btn" title="Add to Wishlist">
+                <i class="far fa-heart"></i>
+              </button>
+              <button class="card-action-btn" title="Quick View">
+                <i class="far fa-eye"></i>
+              </button>
+            </div>
+          </div>
+          <div class="card-body">
+            <p class="card-brand">Dark &amp; Lovely</p>
+            <h3 class="card-title">
+              Au Naturale Moisture Seal Whipped Butter 200ml
+            </h3>
+            <p class="card-price">KSh 980</p>
+            <button class="card-cta">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- PAGINATION -->
+      <div class="pagination">
+        <button class="page-btn active">1</button>
+        <button class="page-btn">2</button>
+        <button class="page-btn">3</button>
+        <button class="page-btn page-next">
+          Next <i class="fas fa-arrow-right"></i>
+        </button>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="footer-inner container">
+        <div class="footer-brand">
+          <a href="#" class="logo footer-logo">Lumi<span>Hair</span></a>
+          <p>
+            Your destination for premium hair care products in Kenya. Curated
+            brands, authentic products, delivered to your door.
+          </p>
+          <div class="social-links">
+            <a href="#" aria-label="Instagram"
+              ><i class="fab fa-instagram"></i
+            ></a>
+            <a href="#" aria-label="Facebook"
+              ><i class="fab fa-facebook-f"></i
+            ></a>
+            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+          </div>
+        </div>
+        <div class="footer-col">
+          <h4>Shop</h4>
+          <a href="#">New In</a>
+          <a href="#">Hair Care</a>
+          <a href="#">Skin Care</a>
+          <a href="#">Body &amp; Bath</a>
+          <a href="#">Makeup</a>
+          <a href="#">Sale</a>
+        </div>
+        <div class="footer-col">
+          <h4>Help</h4>
+          <a href="#">Find a Store</a>
+          <a href="#">Shipping Info</a>
+          <a href="#">Returns</a>
+          <a href="#">FAQs</a>
+          <a href="#">Contact Us</a>
+        </div>
+        <div class="footer-col">
+          <h4>Newsletter</h4>
+          <p>Get new arrivals &amp; exclusive offers straight to your inbox.</p>
+          <div class="newsletter-form">
+            <input type="email" placeholder="your@email.com" />
+            <button>Subscribe</button>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2025 LumiHair. All rights reserved.</p>
+        <div class="payment-icons">
+          <i class="fab fa-cc-visa"></i>
+          <i class="fab fa-cc-mastercard"></i>
+          <i class="fab fa-cc-paypal"></i>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      const menuToggle = document.getElementById("menu-toggle");
+      const mobileDrawer = document.getElementById("mobile-drawer");
+      const drawerOverlay = document.getElementById("drawer-overlay");
+      const drawerClose = document.getElementById("drawer-close");
+
+      menuToggle.addEventListener("click", () => {
+        mobileDrawer.classList.add("open");
+        drawerOverlay.classList.add("visible");
+        document.body.style.overflow = "hidden";
+      });
+
+      [drawerClose, drawerOverlay].forEach((el) => {
+        el.addEventListener("click", () => {
+          mobileDrawer.classList.remove("open");
+          drawerOverlay.classList.remove("visible");
+          document.body.style.overflow = "";
+        });
+      });
+
+      // Pill filter active toggle
+      document.querySelectorAll(".pill").forEach((pill) => {
+        pill.addEventListener("click", () => {
+          document
+            .querySelectorAll(".pill")
+            .forEach((p) => p.classList.remove("active"));
+          pill.classList.add("active");
+        });
+      });
+
+      // Add to cart micro-interaction
+      document.querySelectorAll(".card-cta:not([disabled])").forEach((btn) => {
+        btn.addEventListener("click", function () {
+          const original = this.textContent;
+          this.textContent = "Added ✓";
+          this.classList.add("added");
+          setTimeout(() => {
+            this.textContent = original;
+            this.classList.remove("added");
+          }, 1500);
+        });
+      });
+    </script>
+  </body>
+</html>
