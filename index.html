@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>LumiHair – Hair Care Collection</title>
+    <title>HealthyFlourish – Hair Care Collection</title>
     <link rel="stylesheet" href="index.css" />
     <link
       href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
@@ -19,12 +19,12 @@
     <div class="announcement-bar">
       <p>
         ✨ Free delivery on orders over KSh 3,500 &nbsp;|&nbsp; Shop the finest
-        hair care range in Kenya
+        hair care in Kenya &nbsp;|&nbsp; 📞 0743649936
       </p>
     </div> -->
 
     <!-- HEADER -->
-    <header class="header">
+    <header class="header" id="site-header">
       <div class="header-top">
         <div class="header-left">
           <button class="icon-btn" id="menu-toggle" aria-label="Menu">
@@ -39,42 +39,39 @@
             />
           </div>
         </div>
-
-        <a href="#" class="logo">Wahu<span>Hair</span></a>
-
+        <a href="#" class="logo">Healthy<span>Flourish</span></a>
         <div class="header-right">
-          <a href="#" class="icon-btn" aria-label="Account"
-            ><i class="far fa-user"></i
-          ></a>
-          <a href="#" class="icon-btn wishlist-btn" aria-label="Wishlist"
-            ><i class="far fa-heart"></i
-          ></a>
-          <a href="#" class="icon-btn cart-btn" aria-label="Cart">
-            <i class="fas fa-shopping-bag"></i>
-            <span class="cart-badge">3</span>
+          <a href="#" class="icon-btn"><i class="far fa-user"></i></a>
+          <a href="#" class="icon-btn">
+            <i class="far fa-heart"></i>
+            <span
+              class="cart-badge wishlist-count"
+              id="wishlist-count"
+              style="display: none"
+              >0</span
+            >
           </a>
+          <button class="icon-btn" id="cart-icon-btn">
+            <i class="fas fa-shopping-bag"></i>
+            <span class="cart-badge" id="cart-count">0</span>
+          </button>
         </div>
       </div>
-
-      <!-- NAV -->
-      <nav class="nav" id="main-nav">
+      <nav class="nav">
         <ul class="nav-list">
           <li class="nav-item has-dropdown">
             <a href="#">New In <i class="fas fa-chevron-down"></i></a>
             <div class="dropdown">
-              <a href="#">Just Dropped</a>
-              <a href="#">Bestsellers</a>
-              <a href="#">True Beauty Collection</a>
+              <a href="#">Just Dropped</a><a href="#">Bestsellers</a
+              ><a href="#">True Beauty Collection</a>
             </div>
           </li>
           <li class="nav-item has-dropdown">
             <a href="#">Hair Care <i class="fas fa-chevron-down"></i></a>
             <div class="dropdown">
-              <a href="#">Shampoos</a>
-              <a href="#">Conditioners</a>
-              <a href="#">Hair Oils</a>
-              <a href="#">Treatments</a>
-              <a href="#">Styling</a>
+              <a href="#">Shampoos</a><a href="#">Conditioners</a
+              ><a href="#">Hair Oils</a><a href="#">Treatments</a
+              ><a href="#">Styling</a>
             </div>
           </li>
           <li class="nav-item"><a href="#">Skin Care</a></li>
@@ -82,6 +79,11 @@
           <li class="nav-item"><a href="#">Makeup</a></li>
           <li class="nav-item"><a href="#">Tools &amp; Brushes</a></li>
           <li class="nav-item highlight"><a href="#">Sale</a></li>
+          <li class="nav-item">
+            <a href="#" id="how-to-pay-nav"
+              ><i class="fas fa-mobile-alt"></i> How to Pay</a
+            >
+          </li>
         </ul>
       </nav>
     </header>
@@ -93,26 +95,52 @@
       </button>
       <div class="drawer-trending">
         <p class="drawer-label">Trending</p>
-        <a href="#">Conditioners</a>
-        <a href="#">Hair Oils</a>
-        <a href="#">SheaMoisture</a>
-        <a href="#">Shampoos</a>
-        <a href="#">Hair Treatments</a>
+        <a href="#">Conditioners</a><a href="#">Hair Oils</a
+        ><a href="#">SheaMoisture</a> <a href="#">Shampoos</a
+        ><a href="#">Hair Treatments</a>
       </div>
     </div>
     <div class="drawer-overlay" id="drawer-overlay"></div>
 
+    <!-- HERO BANNER -->
+    <section class="hero-banner">
+      <div class="hero-content">
+        <span class="hero-eyebrow">✦ HealthyFlourish Recommends</span>
+        <h2 class="hero-title">Treat Your Hair<br /><em>Like Royalty</em></h2>
+        <p class="hero-sub">
+          Curated by our hair experts — products that truly work for African
+          hair textures.
+        </p>
+        <div class="hero-ctas">
+          <a href="#collection" class="btn-primary">Shop the Collection</a>
+          <a href="#" class="btn-ghost" id="hero-pay-btn"
+            >How to Pay <i class="fas fa-arrow-right"></i
+          ></a>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-img-stack">
+          <img
+            src="https://images.unsplash.com/photo-1519735777090-ec97162dc266?w=600&q=80"
+            alt="Hair care hero"
+            class="hero-img"
+          />
+          <div class="hero-badge-float">
+            <i class="fas fa-star"></i> #1 in Kenya
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- BREADCRUMB -->
     <div class="breadcrumb-bar">
       <div class="container">
-        <span><a href="#">Home</a></span>
-        <span class="sep">›</span>
-        <span class="current">Hair Care</span>
+        <a href="#">Home</a><span class="sep">›</span
+        ><span class="current">Hair Care</span>
       </div>
     </div>
 
-    <main class="main-content container">
-      <!-- PAGE TITLE + FILTERS -->
+    <main class="main-content container" id="collection">
       <div class="collection-header">
         <h1 class="collection-title">Hair Care</h1>
         <p class="collection-count">128 products</p>
@@ -135,7 +163,7 @@
       <!-- FILTER + SORT BAR -->
       <div class="filter-bar">
         <div class="filter-left">
-          <button class="filter-btn">
+          <button class="filter-btn" id="filter-toggle">
             <i class="fas fa-sliders-h"></i> Filter
           </button>
           <span class="filter-tag">Conditioners <button>&times;</button></span>
@@ -155,235 +183,455 @@
         </div>
       </div>
 
-      <!-- PRODUCT GRID -->
-      <div class="product-grid">
-        <!-- Product 1 -->
-        <div class="product-card">
-          <div class="card-image-wrap">
-            <div class="card-badge badge-sold-out">Sold Out</div>
-            <img
-              src="https://images.unsplash.com/photo-1574182245530-967d9b3831af?w=400&q=80"
-              alt="Argan Foaming Mousse"
-              class="card-img"
-              loading="lazy"
-            />
-            <div class="card-actions">
-              <button class="card-action-btn" title="Add to Wishlist">
-                <i class="far fa-heart"></i>
-              </button>
-              <button class="card-action-btn" title="Quick View">
-                <i class="far fa-eye"></i>
-              </button>
+      <div class="layout-with-sidebar">
+        <!-- SIDEBAR FILTER -->
+        <aside class="filter-sidebar" id="filter-sidebar">
+          <div class="sidebar-section">
+            <h4>Brand</h4>
+            <label><input type="checkbox" checked /> SheaMoisture</label>
+            <label><input type="checkbox" /> Mizani</label>
+            <label><input type="checkbox" /> Creme of Nature</label>
+            <label><input type="checkbox" /> Cantu</label>
+            <label><input type="checkbox" /> ORS</label>
+            <label><input type="checkbox" /> Dark &amp; Lovely</label>
+          </div>
+          <div class="sidebar-section">
+            <h4>Hair Type</h4>
+            <label><input type="checkbox" /> Natural / Coily</label>
+            <label><input type="checkbox" checked /> Relaxed</label>
+            <label><input type="checkbox" /> Wavy / Curly</label>
+            <label><input type="checkbox" /> Locs</label>
+            <label><input type="checkbox" /> All Hair Types</label>
+          </div>
+          <div class="sidebar-section">
+            <h4>Price Range</h4>
+            <div class="price-range-wrap">
+              <input
+                type="range"
+                min="0"
+                max="10000"
+                value="5000"
+                id="price-range"
+              />
+              <div class="price-range-labels">
+                <span>KSh 0</span><span id="price-range-val">KSh 5,000</span>
+              </div>
             </div>
           </div>
-          <div class="card-body">
-            <p class="card-brand">Creme of Nature</p>
-            <h3 class="card-title">
-              Argan Oil Style &amp; Shine Foaming Mousse 207ml
-            </h3>
-            <p class="card-price">KSh 1,150</p>
-            <button class="card-cta sold-out-cta" disabled>Sold Out</button>
+          <div class="sidebar-section">
+            <h4>Availability</h4>
+            <label><input type="checkbox" checked /> In Stock</label>
+            <label><input type="checkbox" /> Sold Out</label>
           </div>
-        </div>
+          <button class="apply-filter-btn">Apply Filters</button>
+        </aside>
 
-        <!-- Product 2 -->
-        <div class="product-card">
-          <div class="card-image-wrap">
-            <div class="card-badge badge-new">New</div>
-            <img
-              src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400&q=80"
-              alt="Mizani Rose H2O Hairdress"
-              class="card-img"
-              loading="lazy"
-            />
-            <div class="card-actions">
-              <button class="card-action-btn" title="Add to Wishlist">
-                <i class="far fa-heart"></i>
-              </button>
-              <button class="card-action-btn" title="Quick View">
-                <i class="far fa-eye"></i>
-              </button>
+        <!-- PRODUCT GRID -->
+        <div class="product-grid" id="product-grid">
+          <div
+            class="product-card"
+            data-id="1"
+            data-name="Argan Oil Foaming Mousse 207ml"
+            data-price="1150"
+            data-brand="Creme of Nature"
+            data-img="https://images.unsplash.com/photo-1574182245530-967d9b3831af?w=400&q=80"
+          >
+            <div class="card-image-wrap">
+              <div class="card-badge badge-sold-out">Sold Out</div>
+              <img
+                src="https://images.unsplash.com/photo-1574182245530-967d9b3831af?w=400&q=80"
+                alt="Argan Foaming Mousse"
+                class="card-img"
+                loading="lazy"
+              />
+              <div class="card-actions">
+                <button
+                  class="card-action-btn wishlist-toggle"
+                  title="Wishlist"
+                >
+                  <i class="far fa-heart"></i>
+                </button>
+                <button
+                  class="card-action-btn quickview-btn"
+                  title="Quick View"
+                >
+                  <i class="far fa-eye"></i>
+                </button>
+                <button
+                  class="card-action-btn whatsapp-card-btn"
+                  title="Order via WhatsApp"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-brand">Creme of Nature</p>
+              <h3 class="card-title">
+                Argan Oil Style &amp; Shine Foaming Mousse 207ml
+              </h3>
+              <div class="stars">
+                ★★★★☆ <span class="review-count">(42)</span>
+              </div>
+              <p class="card-price">KSh 1,150</p>
+              <button class="card-cta sold-out-cta" disabled>Sold Out</button>
             </div>
           </div>
-          <div class="card-body">
-            <p class="card-brand">Mizani</p>
-            <h3 class="card-title">Rose H2O Hairdress 226.8g</h3>
-            <p class="card-price">KSh 4,250</p>
-            <button class="card-cta">Add to Cart</button>
-          </div>
-        </div>
 
-        <!-- Product 3 -->
-        <div class="product-card">
-          <div class="card-image-wrap">
-            <div class="card-badge badge-sold-out">Sold Out</div>
-            <img
-              src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400&q=80"
-              alt="Moisture Rich Shampoo"
-              class="card-img"
-              loading="lazy"
-            />
-            <div class="card-actions">
-              <button class="card-action-btn" title="Add to Wishlist">
-                <i class="far fa-heart"></i>
-              </button>
-              <button class="card-action-btn" title="Quick View">
-                <i class="far fa-eye"></i>
-              </button>
+          <div
+            class="product-card"
+            data-id="2"
+            data-name="Rose H2O Hairdress 226.8g"
+            data-price="4250"
+            data-brand="Mizani"
+            data-img="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400&q=80"
+          >
+            <div class="card-image-wrap">
+              <div class="card-badge badge-new">New</div>
+              <img
+                src="https://images.unsplash.com/photo-1608248543803-ba4f8c70ae0b?w=400&q=80"
+                alt="Mizani Rose H2O"
+                class="card-img"
+                loading="lazy"
+              />
+              <div class="card-actions">
+                <button
+                  class="card-action-btn wishlist-toggle"
+                  title="Wishlist"
+                >
+                  <i class="far fa-heart"></i>
+                </button>
+                <button
+                  class="card-action-btn quickview-btn"
+                  title="Quick View"
+                >
+                  <i class="far fa-eye"></i>
+                </button>
+                <button
+                  class="card-action-btn whatsapp-card-btn"
+                  title="Order via WhatsApp"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-brand">Mizani</p>
+              <h3 class="card-title">Rose H2O Hairdress 226.8g</h3>
+              <div class="stars">
+                ★★★★★ <span class="review-count">(18)</span>
+              </div>
+              <p class="card-price">KSh 4,250</p>
+              <button class="card-cta add-to-cart">Add to Cart</button>
             </div>
           </div>
-          <div class="card-body">
-            <p class="card-brand">Mizani</p>
-            <h3 class="card-title">Moisture Fusion Rich Shampoo 500ml</h3>
-            <p class="card-price"><em>from</em> KSh 4,720</p>
-            <button class="card-cta sold-out-cta" disabled>Sold Out</button>
-          </div>
-        </div>
 
-        <!-- Product 4 -->
-        <div class="product-card featured-card">
-          <div class="card-image-wrap">
-            <div class="card-badge badge-bestseller">Bestseller</div>
-            <img
-              src="https://images.unsplash.com/photo-1585751119414-ef2636f8aede?w=400&q=80"
-              alt="SheaMoisture Curl Cream"
-              class="card-img"
-              loading="lazy"
-            />
-            <div class="card-actions">
-              <button class="card-action-btn" title="Add to Wishlist">
-                <i class="far fa-heart"></i>
-              </button>
-              <button class="card-action-btn" title="Quick View">
-                <i class="far fa-eye"></i>
-              </button>
+          <div
+            class="product-card"
+            data-id="3"
+            data-name="Moisture Fusion Rich Shampoo 500ml"
+            data-price="4720"
+            data-brand="Mizani"
+            data-img="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400&q=80"
+          >
+            <div class="card-image-wrap">
+              <div class="card-badge badge-sold-out">Sold Out</div>
+              <img
+                src="https://images.unsplash.com/photo-1556228453-efd6c1ff04f6?w=400&q=80"
+                alt="Moisture Rich Shampoo"
+                class="card-img"
+                loading="lazy"
+              />
+              <div class="card-actions">
+                <button
+                  class="card-action-btn wishlist-toggle"
+                  title="Wishlist"
+                >
+                  <i class="far fa-heart"></i>
+                </button>
+                <button
+                  class="card-action-btn quickview-btn"
+                  title="Quick View"
+                >
+                  <i class="far fa-eye"></i>
+                </button>
+                <button
+                  class="card-action-btn whatsapp-card-btn"
+                  title="Order via WhatsApp"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-brand">Mizani</p>
+              <h3 class="card-title">Moisture Fusion Rich Shampoo 500ml</h3>
+              <div class="stars">
+                ★★★★☆ <span class="review-count">(31)</span>
+              </div>
+              <p class="card-price"><em>from</em> KSh 4,720</p>
+              <button class="card-cta sold-out-cta" disabled>Sold Out</button>
             </div>
           </div>
-          <div class="card-body">
-            <p class="card-brand">SheaMoisture</p>
-            <h3 class="card-title">
-              Coconut &amp; Hibiscus Curl Enhancing Smoothie 340g
-            </h3>
-            <p class="card-price">KSh 2,800</p>
-            <button class="card-cta">Add to Cart</button>
-          </div>
-        </div>
 
-        <!-- Product 5 -->
-        <div class="product-card">
-          <div class="card-image-wrap">
-            <img
-              src="https://images.unsplash.com/photo-1631390935814-50d2d4cbed6e?w=400&q=80"
-              alt="ORS Olive Oil"
-              class="card-img"
-              loading="lazy"
-            />
-            <div class="card-actions">
-              <button class="card-action-btn" title="Add to Wishlist">
-                <i class="far fa-heart"></i>
-              </button>
-              <button class="card-action-btn" title="Quick View">
-                <i class="far fa-eye"></i>
-              </button>
+          <div
+            class="product-card featured-card"
+            data-id="4"
+            data-name="Coconut & Hibiscus Curl Smoothie 340g"
+            data-price="2800"
+            data-brand="SheaMoisture"
+            data-img="https://images.unsplash.com/photo-1585751119414-ef2636f8aede?w=400&q=80"
+          >
+            <div class="card-image-wrap">
+              <div class="card-badge badge-bestseller">Bestseller</div>
+              <img
+                src="https://images.unsplash.com/photo-1585751119414-ef2636f8aede?w=400&q=80"
+                alt="SheaMoisture Curl Cream"
+                class="card-img"
+                loading="lazy"
+              />
+              <div class="card-actions">
+                <button
+                  class="card-action-btn wishlist-toggle"
+                  title="Wishlist"
+                >
+                  <i class="far fa-heart"></i>
+                </button>
+                <button
+                  class="card-action-btn quickview-btn"
+                  title="Quick View"
+                >
+                  <i class="far fa-eye"></i>
+                </button>
+                <button
+                  class="card-action-btn whatsapp-card-btn"
+                  title="Order via WhatsApp"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-brand">SheaMoisture</p>
+              <h3 class="card-title">
+                Coconut &amp; Hibiscus Curl Enhancing Smoothie 340g
+              </h3>
+              <div class="stars">
+                ★★★★★ <span class="review-count">(204)</span>
+              </div>
+              <p class="card-price">KSh 2,800</p>
+              <button class="card-cta add-to-cart">Add to Cart</button>
             </div>
           </div>
-          <div class="card-body">
-            <p class="card-brand">ORS</p>
-            <h3 class="card-title">
-              Olive Oil Incredibly Rich Oil Moisturising Hair Lotion 300ml
-            </h3>
-            <p class="card-price">KSh 1,450</p>
-            <button class="card-cta">Add to Cart</button>
-          </div>
-        </div>
 
-        <!-- Product 6 -->
-        <div class="product-card">
-          <div class="card-image-wrap">
-            <div class="card-badge badge-sale">−20%</div>
-            <img
-              src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=400&q=80"
-              alt="Cantu Shea Butter"
-              class="card-img"
-              loading="lazy"
-            />
-            <div class="card-actions">
-              <button class="card-action-btn" title="Add to Wishlist">
-                <i class="far fa-heart"></i>
-              </button>
-              <button class="card-action-btn" title="Quick View">
-                <i class="far fa-eye"></i>
-              </button>
+          <div
+            class="product-card"
+            data-id="5"
+            data-name="Olive Oil Moisturising Hair Lotion 300ml"
+            data-price="1450"
+            data-brand="ORS"
+            data-img="https://images.unsplash.com/photo-1631390935814-50d2d4cbed6e?w=400&q=80"
+          >
+            <div class="card-image-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1631390935814-50d2d4cbed6e?w=400&q=80"
+                alt="ORS Olive Oil"
+                class="card-img"
+                loading="lazy"
+              />
+              <div class="card-actions">
+                <button
+                  class="card-action-btn wishlist-toggle"
+                  title="Wishlist"
+                >
+                  <i class="far fa-heart"></i>
+                </button>
+                <button
+                  class="card-action-btn quickview-btn"
+                  title="Quick View"
+                >
+                  <i class="far fa-eye"></i>
+                </button>
+                <button
+                  class="card-action-btn whatsapp-card-btn"
+                  title="Order via WhatsApp"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-brand">ORS</p>
+              <h3 class="card-title">
+                Olive Oil Incredibly Rich Moisturising Hair Lotion 300ml
+              </h3>
+              <div class="stars">
+                ★★★★☆ <span class="review-count">(77)</span>
+              </div>
+              <p class="card-price">KSh 1,450</p>
+              <button class="card-cta add-to-cart">Add to Cart</button>
             </div>
           </div>
-          <div class="card-body">
-            <p class="card-brand">Cantu</p>
-            <h3 class="card-title">
-              Shea Butter for Natural Hair Coconut Curling Cream 340g
-            </h3>
-            <div class="price-row">
-              <p class="card-price">KSh 1,200</p>
-              <p class="card-price-old">KSh 1,500</p>
-            </div>
-            <button class="card-cta">Add to Cart</button>
-          </div>
-        </div>
 
-        <!-- Product 7 -->
-        <div class="product-card">
-          <div class="card-image-wrap">
-            <img
-              src="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400&q=80"
-              alt="Jamaican Black Castor Oil"
-              class="card-img"
-              loading="lazy"
-            />
-            <div class="card-actions">
-              <button class="card-action-btn" title="Add to Wishlist">
-                <i class="far fa-heart"></i>
-              </button>
-              <button class="card-action-btn" title="Quick View">
-                <i class="far fa-eye"></i>
-              </button>
+          <div
+            class="product-card"
+            data-id="6"
+            data-name="Shea Butter Coconut Curling Cream 340g"
+            data-price="1200"
+            data-brand="Cantu"
+            data-img="https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=400&q=80"
+          >
+            <div class="card-image-wrap">
+              <div class="card-badge badge-sale">−20%</div>
+              <img
+                src="https://images.unsplash.com/photo-1526045612212-70caf35c14df?w=400&q=80"
+                alt="Cantu Shea Butter"
+                class="card-img"
+                loading="lazy"
+              />
+              <div class="card-actions">
+                <button
+                  class="card-action-btn wishlist-toggle"
+                  title="Wishlist"
+                >
+                  <i class="far fa-heart"></i>
+                </button>
+                <button
+                  class="card-action-btn quickview-btn"
+                  title="Quick View"
+                >
+                  <i class="far fa-eye"></i>
+                </button>
+                <button
+                  class="card-action-btn whatsapp-card-btn"
+                  title="Order via WhatsApp"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-brand">Cantu</p>
+              <h3 class="card-title">Shea Butter Coconut Curling Cream 340g</h3>
+              <div class="stars">
+                ★★★★★ <span class="review-count">(119)</span>
+              </div>
+              <div class="price-row">
+                <p class="card-price">KSh 1,200</p>
+                <p class="card-price-old">KSh 1,500</p>
+              </div>
+              <button class="card-cta add-to-cart">Add to Cart</button>
             </div>
           </div>
-          <div class="card-body">
-            <p class="card-brand">Tropic Isle Living</p>
-            <h3 class="card-title">Jamaican Black Castor Oil 4oz</h3>
-            <p class="card-price">KSh 1,850</p>
-            <button class="card-cta">Add to Cart</button>
-          </div>
-        </div>
 
-        <!-- Product 8 -->
-        <div class="product-card">
-          <div class="card-image-wrap">
-            <div class="card-badge badge-new">New</div>
-            <img
-              src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&q=80"
-              alt="Dark &amp; Lovely Moisture Seal"
-              class="card-img"
-              loading="lazy"
-            />
-            <div class="card-actions">
-              <button class="card-action-btn" title="Add to Wishlist">
-                <i class="far fa-heart"></i>
-              </button>
-              <button class="card-action-btn" title="Quick View">
-                <i class="far fa-eye"></i>
-              </button>
+          <div
+            class="product-card"
+            data-id="7"
+            data-name="Jamaican Black Castor Oil 4oz"
+            data-price="1850"
+            data-brand="Tropic Isle"
+            data-img="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400&q=80"
+          >
+            <div class="card-image-wrap">
+              <img
+                src="https://images.unsplash.com/photo-1612817288484-6f916006741a?w=400&q=80"
+                alt="Castor Oil"
+                class="card-img"
+                loading="lazy"
+              />
+              <div class="card-actions">
+                <button
+                  class="card-action-btn wishlist-toggle"
+                  title="Wishlist"
+                >
+                  <i class="far fa-heart"></i>
+                </button>
+                <button
+                  class="card-action-btn quickview-btn"
+                  title="Quick View"
+                >
+                  <i class="far fa-eye"></i>
+                </button>
+                <button
+                  class="card-action-btn whatsapp-card-btn"
+                  title="Order via WhatsApp"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-brand">Tropic Isle Living</p>
+              <h3 class="card-title">Jamaican Black Castor Oil 4oz</h3>
+              <div class="stars">
+                ★★★★★ <span class="review-count">(88)</span>
+              </div>
+              <p class="card-price">KSh 1,850</p>
+              <button class="card-cta add-to-cart">Add to Cart</button>
             </div>
           </div>
-          <div class="card-body">
-            <p class="card-brand">Dark &amp; Lovely</p>
-            <h3 class="card-title">
-              Au Naturale Moisture Seal Whipped Butter 200ml
-            </h3>
-            <p class="card-price">KSh 980</p>
-            <button class="card-cta">Add to Cart</button>
+
+          <div
+            class="product-card"
+            data-id="8"
+            data-name="Au Naturale Moisture Seal Butter 200ml"
+            data-price="980"
+            data-brand="Dark & Lovely"
+            data-img="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&q=80"
+          >
+            <div class="card-image-wrap">
+              <div class="card-badge badge-new">New</div>
+              <img
+                src="https://images.unsplash.com/photo-1620916566398-39f1143ab7be?w=400&q=80"
+                alt="Dark & Lovely"
+                class="card-img"
+                loading="lazy"
+              />
+              <div class="card-actions">
+                <button
+                  class="card-action-btn wishlist-toggle"
+                  title="Wishlist"
+                >
+                  <i class="far fa-heart"></i>
+                </button>
+                <button
+                  class="card-action-btn quickview-btn"
+                  title="Quick View"
+                >
+                  <i class="far fa-eye"></i>
+                </button>
+                <button
+                  class="card-action-btn whatsapp-card-btn"
+                  title="Order via WhatsApp"
+                >
+                  <i class="fab fa-whatsapp"></i>
+                </button>
+              </div>
+            </div>
+            <div class="card-body">
+              <p class="card-brand">Dark &amp; Lovely</p>
+              <h3 class="card-title">
+                Au Naturale Moisture Seal Whipped Butter 200ml
+              </h3>
+              <div class="stars">
+                ★★★★☆ <span class="review-count">(55)</span>
+              </div>
+              <p class="card-price">KSh 980</p>
+              <button class="card-cta add-to-cart">Add to Cart</button>
+            </div>
           </div>
         </div>
       </div>
+
+      <!-- RECENTLY VIEWED -->
+      <section
+        class="recently-viewed"
+        id="recently-viewed"
+        style="display: none"
+      >
+        <h3 class="section-heading">Recently Viewed</h3>
+        <div class="recently-viewed-list" id="recently-viewed-list"></div>
+      </section>
 
       <!-- PAGINATION -->
       <div class="pagination">
@@ -396,105 +644,339 @@
       </div>
     </main>
 
+    <!-- TRUST BADGES -->
+    <section class="trust-section">
+      <div class="container trust-grid">
+        <div class="trust-item">
+          <i class="fas fa-lock"></i>
+          <div>
+            <strong>Secure Checkout</strong>
+            <p>SSL encrypted &amp; safe payments</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-mobile-alt"></i>
+          <div>
+            <strong>M-Pesa Accepted</strong>
+            <p>Paybill &amp; Till supported</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-truck"></i>
+          <div>
+            <strong>Fast Delivery</strong>
+            <p>Nairobi same-day · Nationwide 2–3 days</p>
+          </div>
+        </div>
+        <div class="trust-item">
+          <i class="fas fa-undo"></i>
+          <div>
+            <strong>Easy Returns</strong>
+            <p>7-day hassle-free return policy</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- FOOTER -->
     <footer class="footer">
       <div class="footer-inner container">
         <div class="footer-brand">
-          <a href="#" class="logo footer-logo">Lumi<span>Hair</span></a>
+          <a href="#" class="logo footer-logo">Healthy<span>Flourish</span></a>
           <p>
-            Your destination for premium hair care products in Kenya. Curated
-            brands, authentic products, delivered to your door.
+            Your destination for premium hair care in Kenya. Curated brands,
+            authentic products, delivered to your door.
           </p>
           <div class="social-links">
-            <a href="#" aria-label="Instagram"
-              ><i class="fab fa-instagram"></i
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-tiktok"></i></a>
+            <a href="#"><i class="fab fa-youtube"></i></a>
+            <a href="https://wa.me/0743649936" class="wa-social"
+              ><i class="fab fa-whatsapp"></i
             ></a>
-            <a href="#" aria-label="Facebook"
-              ><i class="fab fa-facebook-f"></i
-            ></a>
-            <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
-            <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
           </div>
         </div>
         <div class="footer-col">
           <h4>Shop</h4>
-          <a href="#">New In</a>
-          <a href="#">Hair Care</a>
-          <a href="#">Skin Care</a>
-          <a href="#">Body &amp; Bath</a>
-          <a href="#">Makeup</a>
-          <a href="#">Sale</a>
+          <a href="#">New In</a><a href="#">Hair Care</a
+          ><a href="#">Skin Care</a> <a href="#">Body &amp; Bath</a
+          ><a href="#">Makeup</a><a href="#">Sale</a>
         </div>
         <div class="footer-col">
           <h4>Help</h4>
-          <a href="#">Find a Store</a>
-          <a href="#">Shipping Info</a>
-          <a href="#">Returns</a>
-          <a href="#">FAQs</a>
-          <a href="#">Contact Us</a>
+          <a href="#">Find a Store</a><a href="#">Shipping Info</a
+          ><a href="#">Returns</a> <a href="#">FAQs</a
+          ><a href="#" class="open-payment-modal">How to Pay</a>
+          <a href="https://wa.me/0743649936">WhatsApp Us</a>
         </div>
         <div class="footer-col">
           <h4>Newsletter</h4>
-          <p>Get new arrivals &amp; exclusive offers straight to your inbox.</p>
+          <p>Get new arrivals &amp; exclusive offers.</p>
           <div class="newsletter-form">
             <input type="email" placeholder="your@email.com" />
             <button>Subscribe</button>
+          </div>
+          <div class="payment-methods-footer">
+            <span>We Accept:</span>
+            <div class="pay-badges">
+              <span class="pay-badge mpesa">M-Pesa</span>
+              <i class="fab fa-cc-visa pay-icon"></i>
+              <i class="fab fa-cc-mastercard pay-icon"></i>
+            </div>
           </div>
         </div>
       </div>
       <div class="footer-bottom">
         <p>© 2025 LumiHair. All rights reserved.</p>
         <div class="payment-icons">
-          <i class="fab fa-cc-visa"></i>
-          <i class="fab fa-cc-mastercard"></i>
-          <i class="fab fa-cc-paypal"></i>
+          <i class="fab fa-cc-visa"></i><i class="fab fa-cc-mastercard"></i
+          ><i class="fab fa-cc-paypal"></i>
         </div>
       </div>
     </footer>
 
-    <script>
-      // Mobile menu toggle
-      const menuToggle = document.getElementById("menu-toggle");
-      const mobileDrawer = document.getElementById("mobile-drawer");
-      const drawerOverlay = document.getElementById("drawer-overlay");
-      const drawerClose = document.getElementById("drawer-close");
+    <!-- FLOATING WHATSAPP -->
+    <a
+      href="https://wa.me/0743649936?text=Hi%20HealthyFlourish%2C%20I%27d%20like%20to%20place%20an%20order!"
+      class="whatsapp-float"
+      target="_blank"
+      rel="noopener"
+      aria-label="WhatsApp"
+    >
+      <i class="fab fa-whatsapp"></i>
+      <span class="wa-tooltip">Chat with us!</span>
+    </a>
 
-      menuToggle.addEventListener("click", () => {
-        mobileDrawer.classList.add("open");
-        drawerOverlay.classList.add("visible");
-        document.body.style.overflow = "hidden";
-      });
+    <!-- STICKY ADD-TO-CART BAR -->
+    <div class="sticky-cart-bar" id="sticky-bar">
+      <div class="sticky-bar-inner container">
+        <div class="sticky-product-info">
+          <img id="sticky-img" src="" alt="" />
+          <div>
+            <p class="sticky-name" id="sticky-name">—</p>
+            <p class="sticky-price" id="sticky-price">—</p>
+          </div>
+        </div>
+        <div class="sticky-actions">
+          <button class="sticky-wa-btn" id="sticky-wa-btn">
+            <i class="fab fa-whatsapp"></i> Order via WhatsApp
+          </button>
+          <button class="sticky-add-btn" id="sticky-add-btn">
+            Add to Cart
+          </button>
+          <button class="sticky-close" id="sticky-close">
+            <i class="fas fa-times"></i>
+          </button>
+        </div>
+      </div>
+    </div>
 
-      [drawerClose, drawerOverlay].forEach((el) => {
-        el.addEventListener("click", () => {
-          mobileDrawer.classList.remove("open");
-          drawerOverlay.classList.remove("visible");
-          document.body.style.overflow = "";
-        });
-      });
+    <!-- QUICK VIEW MODAL -->
+    <div class="modal-overlay" id="quickview-overlay">
+      <div class="quickview-modal">
+        <button class="modal-close" id="qv-close">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="qv-layout">
+          <div class="qv-img-wrap"><img src="" id="qv-img" alt="" /></div>
+          <div class="qv-info">
+            <p class="qv-brand" id="qv-brand"></p>
+            <h2 class="qv-title" id="qv-title"></h2>
+            <div class="stars">
+              ★★★★★ <span class="review-count">(reviews)</span>
+            </div>
+            <p class="qv-price" id="qv-price"></p>
+            <p class="qv-desc">
+              A premium formulation crafted for African hair textures. Deeply
+              moisturises, defines, and adds lustrous shine without weighing
+              hair down. Free from sulphates and parabens.
+            </p>
+            <div class="qv-qty-row">
+              <div class="qty-control">
+                <button class="qty-btn" id="qty-minus">−</button>
+                <span id="qty-val">1</span>
+                <button class="qty-btn" id="qty-plus">+</button>
+              </div>
+            </div>
+            <div class="qv-cta-row">
+              <button class="btn-primary qv-add-btn" id="qv-add-btn">
+                Add to Cart
+              </button>
+              <button class="btn-wa" id="qv-wa-btn">
+                <i class="fab fa-whatsapp"></i> Order via WhatsApp
+              </button>
+            </div>
+            <div class="qv-pay-note">
+              <i class="fas fa-mobile-alt"></i>
+              <span
+                >Pay via <strong>M-Pesa</strong> Paybill
+                <strong>522522</strong>, Acc:
+                <strong>1234567</strong> &nbsp;·&nbsp;
+                <a href="#" class="open-payment-modal">How to pay?</a></span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      // Pill filter active toggle
-      document.querySelectorAll(".pill").forEach((pill) => {
-        pill.addEventListener("click", () => {
-          document
-            .querySelectorAll(".pill")
-            .forEach((p) => p.classList.remove("active"));
-          pill.classList.add("active");
-        });
-      });
+    <!-- PAYMENT MODAL -->
+    <div class="modal-overlay" id="payment-overlay">
+      <div class="payment-modal">
+        <button class="modal-close" id="payment-close">
+          <i class="fas fa-times"></i>
+        </button>
+        <div class="pay-modal-header">
+          <i class="fas fa-mobile-alt pay-modal-icon"></i>
+          <h2>How to Pay</h2>
+          <p>We accept M-Pesa, Visa &amp; Mastercard</p>
+        </div>
+        <div class="pay-tabs">
+          <button class="pay-tab active" data-tab="mpesa">M-Pesa</button>
+          <button class="pay-tab" data-tab="card">Card</button>
+          <button class="pay-tab" data-tab="whatsapp">WhatsApp Order</button>
+        </div>
+        <div class="pay-tab-content active" id="tab-mpesa">
+          <div class="mpesa-logo-row">
+            <div class="mpesa-logo">M-<span>PESA</span></div>
+            <span class="mpesa-tagline">Safaricom M-Pesa</span>
+          </div>
+          <div class="pay-steps">
+            <div class="pay-step">
+              <div class="step-num">1</div>
+              <div>Go to <strong>M-Pesa</strong> on your Safaricom line</div>
+            </div>
+            <div class="pay-step">
+              <div class="step-num">2</div>
+              <div>Select <strong>Lipa na M-Pesa → Paybill</strong></div>
+            </div>
+            <div class="pay-step">
+              <div class="step-num">3</div>
+              <div>
+                Business No: <strong class="highlight-code">522522</strong>
+              </div>
+            </div>
+            <div class="pay-step">
+              <div class="step-num">4</div>
+              <div>
+                Account No: <strong class="highlight-code">1234567</strong>
+              </div>
+            </div>
+            <div class="pay-step">
+              <div class="step-num">5</div>
+              <div>Enter amount &amp; your M-Pesa PIN</div>
+            </div>
+            <div class="pay-step">
+              <div class="step-num">6</div>
+              <div>
+                Send the <strong>M-Pesa SMS</strong> to us on
+                <a href="https://wa.me/0743649936">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+          <div class="pay-note-box">
+            <i class="fas fa-info-circle"></i
+            ><span
+              >Order confirmed within 30 mins. You'll get an SMS &amp; WhatsApp
+              update.</span
+            >
+          </div>
+        </div>
+        <div class="pay-tab-content" id="tab-card">
+          <div class="card-pay-icons">
+            <i class="fab fa-cc-visa"></i><i class="fab fa-cc-mastercard"></i>
+          </div>
+          <p class="card-pay-desc">
+            We accept all Visa and Mastercard debit and credit cards. Secured by
+            256-bit SSL encryption.
+          </p>
+          <div class="secure-badges">
+            <span class="secure-badge"
+              ><i class="fas fa-lock"></i> SSL Secure</span
+            >
+            <span class="secure-badge"
+              ><i class="fas fa-shield-alt"></i> 3D Secure</span
+            >
+            <span class="secure-badge"
+              ><i class="fas fa-check-circle"></i> PCI Compliant</span
+            >
+          </div>
+          <p class="card-pay-note">
+            You will be redirected to a secure payment page at checkout.
+          </p>
+        </div>
+        <div class="pay-tab-content" id="tab-whatsapp">
+          <div class="wa-pay-content">
+            <div class="wa-big-icon"><i class="fab fa-whatsapp"></i></div>
+            <h3>Order on WhatsApp</h3>
+            <p>
+              Browse, ask questions and place your order directly. Our team
+              responds within minutes.
+            </p>
+            <div class="wa-steps">
+              <p><strong>1.</strong> Tap the button below to open a chat</p>
+              <p><strong>2.</strong> Tell us which products you want</p>
+              <p><strong>3.</strong> We confirm stock &amp; send your total</p>
+              <p><strong>4.</strong> Pay via M-Pesa &amp; we dispatch</p>
+            </div>
+            <a
+              href="https://wa.me/0743649936?text=Hi%20HealthyFlourish%2C%20I%27d%20like%20to%20place%20an%20order!"
+              class="btn-wa-large"
+              target="_blank"
+              rel="noopener"
+            >
+              <i class="fab fa-whatsapp"></i> Open WhatsApp Chat
+            </a>
+            <p class="wa-hours">Mon–Sat 8am–8pm · Sun 10am–5pm</p>
+          </div>
+        </div>
+      </div>
+    </div>
 
-      // Add to cart micro-interaction
-      document.querySelectorAll(".card-cta:not([disabled])").forEach((btn) => {
-        btn.addEventListener("click", function () {
-          const original = this.textContent;
-          this.textContent = "Added ✓";
-          this.classList.add("added");
-          setTimeout(() => {
-            this.textContent = original;
-            this.classList.remove("added");
-          }, 1500);
-        });
-      });
-    </script>
+    <!-- CART SIDEBAR -->
+    <div class="cart-sidebar" id="cart-sidebar">
+      <div class="cart-sidebar-header">
+        <h3>Your Cart (<span id="cart-item-count">0</span>)</h3>
+        <button class="cart-sidebar-close" id="cart-sidebar-close">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+      <div class="cart-items-list" id="cart-items-list">
+        <div class="cart-empty" id="cart-empty">
+          <i class="fas fa-shopping-bag"></i>
+          <p>Your cart is empty</p>
+          <a href="#collection">Continue Shopping</a>
+        </div>
+      </div>
+      <div class="cart-sidebar-footer" id="cart-footer" style="display: none">
+        <div class="cart-total-row">
+          <span>Total:</span><strong id="cart-total">KSh 0</strong>
+        </div>
+        <button class="checkout-btn open-payment-modal">
+          Proceed to Checkout
+        </button>
+        <button
+          class="checkout-wa-btn"
+          onclick="
+            window.open(
+              'https://wa.me/0743649936?text=Hi%2C%20I%27d%20like%20to%20complete%20my%20order!',
+              '_blank',
+            )
+          "
+        >
+          <i class="fab fa-whatsapp"></i> Checkout via WhatsApp
+        </button>
+        <p class="cart-pay-hint">
+          <i class="fas fa-lock"></i> Pay via M-Pesa, Visa or Mastercard
+        </p>
+      </div>
+    </div>
+    <div class="drawer-overlay" id="cart-overlay"></div>
+
+    <!-- TOAST -->
+    <div class="toast" id="toast"></div>
+
+    <script src="script.js"></script>
   </body>
 </html>
