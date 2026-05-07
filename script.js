@@ -1,5 +1,5 @@
 /* ============================================================
-   LumiHair — main.js
+   HealthyFlourish — main.js
    Handles: Cart, Wishlist, Quick View, Payment Modal,
             Sticky Bar, WhatsApp, Filters, Recently Viewed,
             Mobile Drawer, Toast notifications
@@ -12,7 +12,7 @@ let recentlyViewed = [];
 let qtyValue = 1;
 let currentQuickViewProduct = null;
 
-const WA_NUMBER = "254712345678";
+const WA_NUMBER = "254743649936";
 
 /* ── HELPERS ─────────────────────────────────────────────────*/
 function showToast(msg) {
@@ -181,7 +181,7 @@ document.querySelectorAll(".whatsapp-card-btn").forEach((btn) => {
     const card = this.closest(".product-card");
     const p = getProductData(card);
     const msg = encodeURIComponent(
-      `Hi LumiHair! I'd like to order:\n\n*${p.name}*\nPrice: ${formatPrice(p.price)}\n\nPlease confirm availability.`,
+      `Hi HealthyFlourish! I'd like to order:\n\n*${p.name}*\nPrice: ${formatPrice(p.price)}\n\nPlease confirm availability.`,
     );
     window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, "_blank");
   });
@@ -249,7 +249,7 @@ document.getElementById("qv-wa-btn").addEventListener("click", () => {
   if (!currentQuickViewProduct) return;
   const p = currentQuickViewProduct;
   const msg = encodeURIComponent(
-    `Hi LumiHair! I'd like to order:\n\n*${p.name}* × ${qtyValue}\nPrice: ${formatPrice(p.price * qtyValue)}\n\nPlease confirm availability & provide payment details.`,
+    `Hi HealthyFlourish! I'd like to order:\n\n*${p.name}* × ${qtyValue}\nPrice: ${formatPrice(p.price * qtyValue)}\n\nPlease confirm availability & provide payment details.`,
   );
   window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, "_blank");
 });
@@ -358,7 +358,7 @@ document.getElementById("sticky-wa-btn").addEventListener("click", () => {
   if (!stickyProduct) return;
   const p = stickyProduct;
   const msg = encodeURIComponent(
-    `Hi LumiHair! I'd like to order:\n\n*${p.name}*\nPrice: ${formatPrice(p.price)}\n\nPlease confirm availability.`,
+    `Hi HealthyFlourish! I'd like to order:\n\n*${p.name}*\nPrice: ${formatPrice(p.price)}\n\nPlease confirm availability.`,
   );
   window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, "_blank");
 });
@@ -487,7 +487,8 @@ document.querySelectorAll(".product-card").forEach((card, i) => {
 });
 
 /* ── LIVE SEARCH ─────────────────────────────────────────────*/
-const searchInput = document.querySelector(".search-input");
+const searchInput = document.querySelector(".header-left .search-input");
+const mobileSearchInput = document.getElementById("mobile-search-input");
 const allCards = document.querySelectorAll(".product-card");
 
 // Create a "no results" message element and inject it into the grid
@@ -510,44 +511,51 @@ document.getElementById("product-grid").appendChild(noResults);
 const countDisplay = document.querySelector(".collection-count");
 const totalProducts = allCards.length;
 
-searchInput.addEventListener("input", function () {
-  const query = this.value.trim().toLowerCase();
+function runSearch(query) {
+  const q = query.trim().toLowerCase();
   let visibleCount = 0;
 
   allCards.forEach((card) => {
     const name = (card.dataset.name || "").toLowerCase();
     const brand = (card.dataset.brand || "").toLowerCase();
-    const matches = !query || name.includes(query) || brand.includes(query);
-
+    const matches = !q || name.includes(q) || brand.includes(q);
     card.style.display = matches ? "" : "none";
     if (matches) visibleCount++;
   });
 
-  // Show/hide empty state
   noResults.style.display = visibleCount === 0 ? "block" : "none";
 
-  // Update the product count
-  if (query) {
-    countDisplay.textContent = `${visibleCount} result${visibleCount !== 1 ? "s" : ""} for "${this.value.trim()}"`;
+  if (q) {
+    countDisplay.textContent = `${visibleCount} result${visibleCount !== 1 ? "s" : ""} for "${query.trim()}"`;
   } else {
     countDisplay.textContent = `${totalProducts} products`;
   }
 
-  // Scroll to collection if user is typing from header
-  if (query.length === 1) {
+  if (q.length === 1) {
     document
       .getElementById("collection")
       ?.scrollIntoView({ behavior: "smooth", block: "start" });
   }
+}
+
+searchInput.addEventListener("input", function () {
+  runSearch(this.value);
+});
+mobileSearchInput.addEventListener("input", function () {
+  searchInput.value = this.value; // keep in sync
+  runSearch(this.value);
 });
 
-// Clear search when user presses Escape
-searchInput.addEventListener("keydown", function (e) {
-  if (e.key === "Escape") {
-    this.value = "";
-    this.dispatchEvent(new Event("input")); // trigger reset
-    this.blur();
-  }
+// Escape clears both
+[searchInput, mobileSearchInput].forEach((inp) => {
+  inp.addEventListener("keydown", function (e) {
+    if (e.key === "Escape") {
+      searchInput.value = "";
+      mobileSearchInput.value = "";
+      runSearch("");
+      this.blur();
+    }
+  });
 });
 
 /* ── INIT ────────────────────────────────────────────────────*/

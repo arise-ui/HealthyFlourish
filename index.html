@@ -19,7 +19,7 @@
     <div class="announcement-bar">
       <p>
         ✨ Free delivery on orders over KSh 3,500 &nbsp;|&nbsp; Shop the finest
-        hair care in Kenya &nbsp;|&nbsp; 📞 0743649936
+        hair care in Kenya &nbsp;|&nbsp; 📞 0743 649 936
       </p>
     </div> -->
 
@@ -57,6 +57,19 @@
           </button>
         </div>
       </div>
+      <!-- Mobile full-width search (shown only on mobile via CSS) -->
+      <div class="mobile-search-row">
+        <div class="search-wrap">
+          <i class="fas fa-search search-icon"></i>
+          <input
+            type="text"
+            placeholder="Search products…"
+            class="search-input"
+            id="mobile-search-input"
+          />
+        </div>
+      </div>
+
       <nav class="nav">
         <ul class="nav-list">
           <li class="nav-item has-dropdown">
@@ -692,7 +705,7 @@
             <a href="#"><i class="fab fa-facebook-f"></i></a>
             <a href="#"><i class="fab fa-tiktok"></i></a>
             <a href="#"><i class="fab fa-youtube"></i></a>
-            <a href="https://wa.me/0743649936" class="wa-social"
+            <a href="https://wa.me/254743649936" class="wa-social"
               ><i class="fab fa-whatsapp"></i
             ></a>
           </div>
@@ -708,7 +721,7 @@
           <a href="#">Find a Store</a><a href="#">Shipping Info</a
           ><a href="#">Returns</a> <a href="#">FAQs</a
           ><a href="#" class="open-payment-modal">How to Pay</a>
-          <a href="https://wa.me/0743649936">WhatsApp Us</a>
+          <a href="https://wa.me/254743649936">WhatsApp Us</a>
         </div>
         <div class="footer-col">
           <h4>Newsletter</h4>
@@ -728,7 +741,7 @@
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2025 LumiHair. All rights reserved.</p>
+        <p>© 2025 HealthyFlourish. All rights reserved.</p>
         <div class="payment-icons">
           <i class="fab fa-cc-visa"></i><i class="fab fa-cc-mastercard"></i
           ><i class="fab fa-cc-paypal"></i>
@@ -738,7 +751,7 @@
 
     <!-- FLOATING WHATSAPP -->
     <a
-      href="https://wa.me/0743649936?text=Hi%20HealthyFlourish%2C%20I%27d%20like%20to%20place%20an%20order!"
+      href="https://wa.me/254743649936?text=Hi%20HealthyFlourish%2C%20I%27d%20like%20to%20place%20an%20order!"
       class="whatsapp-float"
       target="_blank"
       rel="noopener"
@@ -810,9 +823,8 @@
             <div class="qv-pay-note">
               <i class="fas fa-mobile-alt"></i>
               <span
-                >Pay via <strong>M-Pesa</strong> Paybill
-                <strong>522522</strong>, Acc:
-                <strong>1234567</strong> &nbsp;·&nbsp;
+                >Pay via <strong>M-Pesa</strong> — Paybill or Pochi la Biashara
+                <strong>0743 649 936</strong> &nbsp;·&nbsp;
                 <a href="#" class="open-payment-modal">How to pay?</a></span
               >
             </div>
@@ -833,7 +845,10 @@
           <p>We accept M-Pesa, Visa &amp; Mastercard</p>
         </div>
         <div class="pay-tabs">
-          <button class="pay-tab active" data-tab="mpesa">M-Pesa</button>
+          <button class="pay-tab active" data-tab="mpesa">
+            M-Pesa Paybill
+          </button>
+          <button class="pay-tab" data-tab="pochi">Pochi la Biashara</button>
           <button class="pay-tab" data-tab="card">Card</button>
           <button class="pay-tab" data-tab="whatsapp">WhatsApp Order</button>
         </div>
@@ -871,11 +886,76 @@
               <div class="step-num">6</div>
               <div>
                 Send the <strong>M-Pesa SMS</strong> to us on
-                <a href="https://wa.me/0743649936">WhatsApp</a>
+                <a href="https://wa.me/254743649936">WhatsApp</a>
               </div>
             </div>
           </div>
           <div class="pay-note-box">
+            <i class="fas fa-info-circle"></i
+            ><span
+              >Order confirmed within 30 mins. You'll get an SMS &amp; WhatsApp
+              update.</span
+            >
+          </div>
+        </div>
+
+        <!-- POCHI LA BIASHARA TAB -->
+        <div class="pay-tab-content" id="tab-pochi">
+          <div class="mpesa-logo-row">
+            <div class="mpesa-logo pochi-logo">M-<span>PESA</span></div>
+            <span class="mpesa-tagline">Pochi la Biashara</span>
+          </div>
+          <p
+            style="
+              font-size: 0.85rem;
+              color: var(--clr-muted);
+              margin-bottom: 18px;
+              line-height: 1.6;
+            "
+          >
+            Send money directly to our <strong>Pochi la Biashara</strong> number
+            — fast, simple, no account number needed.
+          </p>
+          <div class="pay-steps">
+            <div class="pay-step">
+              <div class="step-num">1</div>
+              <div>Open <strong>M-Pesa</strong> on your Safaricom line</div>
+            </div>
+            <div class="pay-step">
+              <div class="step-num">2</div>
+              <div>Select <strong>Send Money</strong></div>
+            </div>
+            <div class="pay-step">
+              <div class="step-num">3</div>
+              <div>
+                Enter number:
+                <strong class="highlight-code">0743 649 936</strong>
+              </div>
+            </div>
+            <div class="pay-step">
+              <div class="step-num">4</div>
+              <div>Enter the <strong>exact order amount</strong></div>
+            </div>
+            <div class="pay-step">
+              <div class="step-num">5</div>
+              <div>Enter your <strong>M-Pesa PIN</strong> and confirm</div>
+            </div>
+            <div class="pay-step">
+              <div class="step-num">6</div>
+              <div>
+                Send the <strong>M-Pesa confirmation SMS</strong> to us on
+                <a href="https://wa.me/254743649936">WhatsApp</a>
+              </div>
+            </div>
+          </div>
+          <div class="pochi-highlight-box">
+            <i class="fas fa-mobile-alt"></i>
+            <div>
+              <strong>Pochi la Biashara Number</strong>
+              <span class="pochi-number">0743 649 936</span>
+            </div>
+          </div>
+          <div class="pay-note-box" style="margin-top: 14px">
             <i class="fas fa-info-circle"></i
             ><span
               >Order confirmed within 30 mins. You'll get an SMS &amp; WhatsApp
@@ -921,7 +1001,7 @@
               <p><strong>4.</strong> Pay via M-Pesa &amp; we dispatch</p>
             </div>
             <a
-              href="https://wa.me/0743649936?text=Hi%20HealthyFlourish%2C%20I%27d%20like%20to%20place%20an%20order!"
+              href="https://wa.me/254743649936?text=Hi%20HealthyFlourish%2C%20I%27d%20like%20to%20place%20an%20order!"
               class="btn-wa-large"
               target="_blank"
               rel="noopener"
@@ -960,7 +1040,7 @@
           class="checkout-wa-btn"
           onclick="
             window.open(
-              'https://wa.me/0743649936?text=Hi%2C%20I%27d%20like%20to%20complete%20my%20order!',
+              'https://wa.me/254743649936?text=Hi%2C%20I%27d%20like%20to%20complete%20my%20order!',
               '_blank',
             )
           "
