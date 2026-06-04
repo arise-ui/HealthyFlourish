@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>HealthyFlourish – Hair Care Collection</title>
-    <link rel="stylesheet" href="index.css" />
+    <title>HealthyFlourish – Hair Care & Women Empowerment</title>
+    <link rel="stylesheet" href="styles.css" />
     <link
-      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500;600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Outfit:wght@300;400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap"
       rel="stylesheet"
     />
     <link
@@ -15,14 +15,6 @@
     />
   </head>
   <body>
-    <!-- TOP ANNOUNCEMENT BAR
-    <div class="announcement-bar">
-      <p>
-        ✨ Free delivery on orders over KSh 3,500 &nbsp;|&nbsp; Shop the finest
-        hair care in Kenya &nbsp;|&nbsp; 📞 0743 649 936
-      </p>
-    </div> -->
-
     <!-- HEADER -->
     <header class="header" id="site-header">
       <div class="header-top">
@@ -41,23 +33,13 @@
         </div>
         <a href="#" class="logo">Healthy<span>Flourish</span></a>
         <div class="header-right">
-          <a href="#" class="icon-btn"><i class="far fa-user"></i></a>
-          <a href="#" class="icon-btn">
-            <i class="far fa-heart"></i>
-            <span
-              class="cart-badge wishlist-count"
-              id="wishlist-count"
-              style="display: none"
-              >0</span
-            >
-          </a>
           <button class="icon-btn" id="cart-icon-btn">
             <i class="fas fa-shopping-bag"></i>
             <span class="cart-badge" id="cart-count">0</span>
           </button>
         </div>
       </div>
-      <!-- Mobile full-width search (shown only on mobile via CSS) -->
+
       <div class="mobile-search-row">
         <div class="search-wrap">
           <i class="fas fa-search search-icon"></i>
@@ -92,11 +74,6 @@
           <li class="nav-item"><a href="#">Makeup</a></li>
           <li class="nav-item"><a href="#">Tools &amp; Brushes</a></li>
           <li class="nav-item highlight"><a href="#">Sale</a></li>
-          <li class="nav-item">
-            <a href="#" id="how-to-pay-nav"
-              ><i class="fas fa-mobile-alt"></i> How to Pay</a
-            >
-          </li>
         </ul>
       </nav>
     </header>
@@ -118,16 +95,16 @@
     <!-- HERO BANNER -->
     <section class="hero-banner">
       <div class="hero-content">
-        <span class="hero-eyebrow">✦ HealthyFlourish Recommends</span>
-        <h2 class="hero-title">Treat Your Hair<br /><em>Like Royalty</em></h2>
+        <span class="hero-eyebrow">✦ HealthyFlourish Philosophy</span>
+        <h2 class="hero-title">Treat Your Hair<br /><em>Treat Yourself</em></h2>
         <p class="hero-sub">
-          Curated by our hair experts — products that truly work for African
-          hair textures.
+          Premium hair care curated for African textures. But this is about more
+          than beauty—it's about empowering women to see their own worth.
         </p>
         <div class="hero-ctas">
           <a href="#collection" class="btn-primary">Shop the Collection</a>
-          <a href="#" class="btn-ghost" id="hero-pay-btn"
-            >How to Pay <i class="fas fa-arrow-right"></i
+          <a href="#about-section" class="btn-ghost"
+            >Our Story <i class="fas fa-arrow-right"></i
           ></a>
         </div>
       </div>
@@ -139,7 +116,7 @@
             class="hero-img"
           />
           <div class="hero-badge-float">
-            <i class="fas fa-star"></i> #1 in Kenya
+            <i class="fas fa-star"></i> Empowering Kenya
           </div>
         </div>
       </div>
@@ -155,7 +132,7 @@
 
     <main class="main-content container" id="collection">
       <div class="collection-header">
-        <h1 class="collection-title">Hair Care</h1>
+        <h1 class="collection-title">Hair Care Collection</h1>
         <p class="collection-count">128 products</p>
       </div>
 
@@ -259,12 +236,6 @@
               />
               <div class="card-actions">
                 <button
-                  class="card-action-btn wishlist-toggle"
-                  title="Wishlist"
-                >
-                  <i class="far fa-heart"></i>
-                </button>
-                <button
                   class="card-action-btn quickview-btn"
                   title="Quick View"
                 >
@@ -309,12 +280,6 @@
               />
               <div class="card-actions">
                 <button
-                  class="card-action-btn wishlist-toggle"
-                  title="Wishlist"
-                >
-                  <i class="far fa-heart"></i>
-                </button>
-                <button
                   class="card-action-btn quickview-btn"
                   title="Quick View"
                 >
@@ -356,12 +321,6 @@
                 loading="lazy"
               />
               <div class="card-actions">
-                <button
-                  class="card-action-btn wishlist-toggle"
-                  title="Wishlist"
-                >
-                  <i class="far fa-heart"></i>
-                </button>
                 <button
                   class="card-action-btn quickview-btn"
                   title="Quick View"
@@ -405,12 +364,6 @@
               />
               <div class="card-actions">
                 <button
-                  class="card-action-btn wishlist-toggle"
-                  title="Wishlist"
-                >
-                  <i class="far fa-heart"></i>
-                </button>
-                <button
                   class="card-action-btn quickview-btn"
                   title="Quick View"
                 >
@@ -453,12 +406,6 @@
                 loading="lazy"
               />
               <div class="card-actions">
-                <button
-                  class="card-action-btn wishlist-toggle"
-                  title="Wishlist"
-                >
-                  <i class="far fa-heart"></i>
-                </button>
                 <button
                   class="card-action-btn quickview-btn"
                   title="Quick View"
@@ -504,12 +451,6 @@
               />
               <div class="card-actions">
                 <button
-                  class="card-action-btn wishlist-toggle"
-                  title="Wishlist"
-                >
-                  <i class="far fa-heart"></i>
-                </button>
-                <button
                   class="card-action-btn quickview-btn"
                   title="Quick View"
                 >
@@ -554,12 +495,6 @@
               />
               <div class="card-actions">
                 <button
-                  class="card-action-btn wishlist-toggle"
-                  title="Wishlist"
-                >
-                  <i class="far fa-heart"></i>
-                </button>
-                <button
                   class="card-action-btn quickview-btn"
                   title="Quick View"
                 >
@@ -602,12 +537,6 @@
               />
               <div class="card-actions">
                 <button
-                  class="card-action-btn wishlist-toggle"
-                  title="Wishlist"
-                >
-                  <i class="far fa-heart"></i>
-                </button>
-                <button
                   class="card-action-btn quickview-btn"
                   title="Quick View"
                 >
@@ -635,27 +564,110 @@
           </div>
         </div>
       </div>
-
-      <!-- RECENTLY VIEWED -->
-      <section
-        class="recently-viewed"
-        id="recently-viewed"
-        style="display: none"
-      >
-        <h3 class="section-heading">Recently Viewed</h3>
-        <div class="recently-viewed-list" id="recently-viewed-list"></div>
-      </section>
-
-      <!-- PAGINATION -->
-      <div class="pagination">
-        <button class="page-btn active">1</button>
-        <button class="page-btn">2</button>
-        <button class="page-btn">3</button>
-        <button class="page-btn page-next">
-          Next <i class="fas fa-arrow-right"></i>
-        </button>
-      </div>
     </main>
+
+    <!-- FOUNDER / ABOUT SECTION -->
+    <section class="about-section" id="about-section">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-image">
+            <img src="" alt="Founder of HealthyFlourish" class="founder-img" />
+            <div class="about-badge">Founder & Visionary</div>
+          </div>
+          <div class="about-content">
+            <h3 class="section-subheading">Meet the Founder</h3>
+            <h2 class="section-heading">A Journey of Self-Worth</h2>
+            <p class="about-text">
+              HealthyFlourish was born from a simple belief:
+              <strong
+                >when a woman takes care of her hair, she's declaring her own
+                worth.</strong
+              >
+              Our founder, a passionate advocate for women's empowerment, saw
+              that many Kenyan women were choosing products that didn't honor
+              their natural textures—not because they wanted to, but because
+              they didn't see themselves reflected in the beauty industry.
+            </p>
+            <p class="about-text">
+              She realized that hair care wasn't superficial—it was spiritual.
+              When you invest in yourself, you're making a statement about your
+              value. When you choose products made for YOUR hair, you're saying
+              "I matter."
+            </p>
+            <div class="about-divider"></div>
+            <h3 class="faith-heading">A Message of Faith</h3>
+            <p class="about-text faith-text">
+              <i class="fas fa-quote-left"></i>
+              "Every woman is fearfully and wonderfully made. Your beauty, your
+              strength, your resilience—these are not accidents. They are
+              reflections of God's intentional design. HealthyFlourish exists to
+              remind you of this truth, one product at a time."
+            </p>
+            <p class="about-text">
+              At the heart of everything we do is a commitment to helping women
+              in Kenya see themselves as God sees them—worthy, beautiful, and
+              capable of greatness.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- EMPOWERMENT SECTION -->
+    <section class="empowerment-section">
+      <div class="container">
+        <div class="empowerment-header">
+          <h2 class="section-heading light">Beyond Hair Care</h2>
+          <p class="section-subtext">Why Hair + Empowerment Go Hand in Hand</p>
+        </div>
+        <div class="empowerment-grid">
+          <div class="empowerment-card">
+            <div class="emp-icon">
+              <i class="fas fa-mirror"></i>
+            </div>
+            <h3>Self-Perception</h3>
+            <p>
+              Hair care is an act of self-love. When you invest in yourself,
+              you're declaring that you're worth investing in. This shift in
+              mindset cascades into every area of life.
+            </p>
+          </div>
+          <div class="empowerment-card">
+            <div class="emp-icon">
+              <i class="fas fa-handshake"></i>
+            </div>
+            <h3>Community & Connection</h3>
+            <p>
+              By choosing HealthyFlourish, you're joining a community of women
+              who celebrate African beauty. You're supporting local, and you're
+              showing the next generation what self-respect looks like.
+            </p>
+          </div>
+          <div class="empowerment-card">
+            <div class="emp-icon">
+              <i class="fas fa-heart"></i>
+            </div>
+            <h3>Holistic Wellness</h3>
+            <p>
+              True beauty begins with how you feel. Our products are
+              sulfate-free, paraben-free, and designed to nourish. Because
+              empowerment includes caring for your whole self.
+            </p>
+          </div>
+          <div class="empowerment-card">
+            <div class="emp-icon">
+              <i class="fas fa-lightbulb"></i>
+            </div>
+            <h3>Economic Independence</h3>
+            <p>
+              HealthyFlourish creates opportunities for women entrepreneurs and
+              suppliers. Your purchase supports other women in breaking barriers
+              and building their own futures.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
 
     <!-- TRUST BADGES -->
     <section class="trust-section">
@@ -697,8 +709,8 @@
         <div class="footer-brand">
           <a href="#" class="logo footer-logo">Healthy<span>Flourish</span></a>
           <p>
-            Your destination for premium hair care in Kenya. Curated brands,
-            authentic products, delivered to your door.
+            Empowering women through premium hair care. When you invest in
+            yourself, you declare your worth.
           </p>
           <div class="social-links">
             <a href="#"><i class="fab fa-instagram"></i></a>
@@ -719,32 +731,24 @@
         <div class="footer-col">
           <h4>Help</h4>
           <a href="#">Find a Store</a><a href="#">Shipping Info</a
-          ><a href="#">Returns</a> <a href="#">FAQs</a
-          ><a href="#" class="open-payment-modal">How to Pay</a>
+          ><a href="#">Returns</a> <a href="#">FAQs</a>
           <a href="https://wa.me/254743649936">WhatsApp Us</a>
         </div>
         <div class="footer-col">
-          <h4>Newsletter</h4>
-          <p>Get new arrivals &amp; exclusive offers.</p>
-          <div class="newsletter-form">
-            <input type="email" placeholder="your@email.com" />
-            <button>Subscribe</button>
-          </div>
-          <div class="payment-methods-footer">
-            <span>We Accept:</span>
-            <div class="pay-badges">
-              <span class="pay-badge mpesa">M-Pesa</span>
-              <i class="fab fa-cc-visa pay-icon"></i>
-              <i class="fab fa-cc-mastercard pay-icon"></i>
-            </div>
-          </div>
+          <h4>About</h4>
+          <a href="#about-section">Our Story</a>
+          <a href="#empowerment-section">Women Empowerment</a>
+          <a href="#">Contact</a>
+          <a href="#">Privacy Policy</a>
         </div>
       </div>
       <div class="footer-bottom">
-        <p>© 2025 HealthyFlourish. All rights reserved.</p>
+        <p>
+          © 2025 HealthyFlourish. All rights reserved. Empowering women, one
+          product at a time.
+        </p>
         <div class="payment-icons">
-          <i class="fab fa-cc-visa"></i><i class="fab fa-cc-mastercard"></i
-          ><i class="fab fa-cc-paypal"></i>
+          <span class="pay-badge mpesa">M-Pesa</span>
         </div>
       </div>
     </footer>
@@ -760,30 +764,6 @@
       <i class="fab fa-whatsapp"></i>
       <span class="wa-tooltip">Chat with us!</span>
     </a>
-
-    <!-- STICKY ADD-TO-CART BAR -->
-    <div class="sticky-cart-bar" id="sticky-bar">
-      <div class="sticky-bar-inner container">
-        <div class="sticky-product-info">
-          <img id="sticky-img" src="" alt="" />
-          <div>
-            <p class="sticky-name" id="sticky-name">—</p>
-            <p class="sticky-price" id="sticky-price">—</p>
-          </div>
-        </div>
-        <div class="sticky-actions">
-          <button class="sticky-wa-btn" id="sticky-wa-btn">
-            <i class="fab fa-whatsapp"></i> Order via WhatsApp
-          </button>
-          <button class="sticky-add-btn" id="sticky-add-btn">
-            Add to Cart
-          </button>
-          <button class="sticky-close" id="sticky-close">
-            <i class="fas fa-times"></i>
-          </button>
-        </div>
-      </div>
-    </div>
 
     <!-- QUICK VIEW MODAL -->
     <div class="modal-overlay" id="quickview-overlay">
@@ -823,9 +803,8 @@
             <div class="qv-pay-note">
               <i class="fas fa-mobile-alt"></i>
               <span
-                >Pay via <strong>M-Pesa</strong> — Paybill or Pochi la Biashara
-                <strong>0743 649 936</strong> &nbsp;·&nbsp;
-                <a href="#" class="open-payment-modal">How to pay?</a></span
+                >Pay via <strong>M-Pesa</strong> — Paybill
+                <strong>0743 649 936</strong></span
               >
             </div>
           </div>
@@ -833,7 +812,7 @@
       </div>
     </div>
 
-    <!-- PAYMENT MODAL -->
+    <!-- PAYMENT MODAL (Simplified) -->
     <div class="modal-overlay" id="payment-overlay">
       <div class="payment-modal">
         <button class="modal-close" id="payment-close">
@@ -842,65 +821,15 @@
         <div class="pay-modal-header">
           <i class="fas fa-mobile-alt pay-modal-icon"></i>
           <h2>How to Pay</h2>
-          <p>We accept M-Pesa, Visa &amp; Mastercard</p>
+          <p>We accept M-Pesa &amp; WhatsApp Orders</p>
         </div>
         <div class="pay-tabs">
-          <button class="pay-tab active" data-tab="mpesa">
-            M-Pesa Paybill
-          </button>
-          <button class="pay-tab" data-tab="pochi">Pochi la Biashara</button>
-          <button class="pay-tab" data-tab="card">Card</button>
+          <button class="pay-tab active" data-tab="pochi">M-Pesa</button>
           <button class="pay-tab" data-tab="whatsapp">WhatsApp Order</button>
-        </div>
-        <div class="pay-tab-content active" id="tab-mpesa">
-          <div class="mpesa-logo-row">
-            <div class="mpesa-logo">M-<span>PESA</span></div>
-            <span class="mpesa-tagline">Safaricom M-Pesa</span>
-          </div>
-          <div class="pay-steps">
-            <div class="pay-step">
-              <div class="step-num">1</div>
-              <div>Go to <strong>M-Pesa</strong> on your Safaricom line</div>
-            </div>
-            <div class="pay-step">
-              <div class="step-num">2</div>
-              <div>Select <strong>Lipa na M-Pesa → Paybill</strong></div>
-            </div>
-            <div class="pay-step">
-              <div class="step-num">3</div>
-              <div>
-                Business No: <strong class="highlight-code">522522</strong>
-              </div>
-            </div>
-            <div class="pay-step">
-              <div class="step-num">4</div>
-              <div>
-                Account No: <strong class="highlight-code">1234567</strong>
-              </div>
-            </div>
-            <div class="pay-step">
-              <div class="step-num">5</div>
-              <div>Enter amount &amp; your M-Pesa PIN</div>
-            </div>
-            <div class="pay-step">
-              <div class="step-num">6</div>
-              <div>
-                Send the <strong>M-Pesa SMS</strong> to us on
-                <a href="https://wa.me/254743649936">WhatsApp</a>
-              </div>
-            </div>
-          </div>
-          <div class="pay-note-box">
-            <i class="fas fa-info-circle"></i
-            ><span
-              >Order confirmed within 30 mins. You'll get an SMS &amp; WhatsApp
-              update.</span
-            >
-          </div>
         </div>
 
         <!-- POCHI LA BIASHARA TAB -->
-        <div class="pay-tab-content" id="tab-pochi">
+        <div class="pay-tab-content active" id="tab-pochi">
           <div class="mpesa-logo-row">
             <div class="mpesa-logo pochi-logo">M-<span>PESA</span></div>
             <span class="mpesa-tagline">Pochi la Biashara</span>
@@ -955,37 +884,9 @@
               <span class="pochi-number">0743 649 936</span>
             </div>
           </div>
-          <div class="pay-note-box" style="margin-top: 14px">
-            <i class="fas fa-info-circle"></i
-            ><span
-              >Order confirmed within 30 mins. You'll get an SMS &amp; WhatsApp
-              update.</span
-            >
-          </div>
         </div>
-        <div class="pay-tab-content" id="tab-card">
-          <div class="card-pay-icons">
-            <i class="fab fa-cc-visa"></i><i class="fab fa-cc-mastercard"></i>
-          </div>
-          <p class="card-pay-desc">
-            We accept all Visa and Mastercard debit and credit cards. Secured by
-            256-bit SSL encryption.
-          </p>
-          <div class="secure-badges">
-            <span class="secure-badge"
-              ><i class="fas fa-lock"></i> SSL Secure</span
-            >
-            <span class="secure-badge"
-              ><i class="fas fa-shield-alt"></i> 3D Secure</span
-            >
-            <span class="secure-badge"
-              ><i class="fas fa-check-circle"></i> PCI Compliant</span
-            >
-          </div>
-          <p class="card-pay-note">
-            You will be redirected to a secure payment page at checkout.
-          </p>
-        </div>
+
+        <!-- WHATSAPP TAB -->
         <div class="pay-tab-content" id="tab-whatsapp">
           <div class="wa-pay-content">
             <div class="wa-big-icon"><i class="fab fa-whatsapp"></i></div>
@@ -1048,7 +949,7 @@
           <i class="fab fa-whatsapp"></i> Checkout via WhatsApp
         </button>
         <p class="cart-pay-hint">
-          <i class="fas fa-lock"></i> Pay via M-Pesa, Visa or Mastercard
+          <i class="fas fa-lock"></i> Pay via M-Pesa or WhatsApp
         </p>
       </div>
     </div>
@@ -1057,6 +958,6 @@
     <!-- TOAST -->
     <div class="toast" id="toast"></div>
 
-    <script src="script.js"></script>
+    <script src="main.js"></script>
   </body>
 </html>

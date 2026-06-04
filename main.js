@@ -1,14 +1,11 @@
 /* ============================================================
-   HealthyFlourish — main.js
-   Handles: Cart, Wishlist, Quick View, Payment Modal,
-            Sticky Bar, WhatsApp, Filters, Recently Viewed,
+   HealthyFlourish — main.js (v3 Enhanced)
+   Handles: Cart, Quick View, Payment Modal (M-Pesa/WhatsApp only),
             Mobile Drawer, Toast notifications
    ============================================================ */
 
 /* ── STATE ─────────────────────────────────────────────────── */
-let cart = [];
-let wishlist = [];
-let recentlyViewed = [];
+let cart = JSON.parse(localStorage.getItem("cart")) || [];
 let qtyValue = 1;
 let currentQuickViewProduct = null;
 
@@ -26,6 +23,10 @@ function formatPrice(n) {
   return "KSh " + Number(n).toLocaleString();
 }
 
+function saveCart() {
+  localStorage.setItem("cart", JSON.stringify(cart));
+}
+
 function getProductData(card) {
   return {
     id: card.dataset.id,
@@ -36,23 +37,26 @@ function getProductData(card) {
   };
 }
 
-/* ── TOAST ───────────────────────────────────────────────────*/
-
 /* ── CART ────────────────────────────────────────────────────*/
 function addToCart(product) {
   const existing = cart.find((i) => i.id === product.id);
+
   if (existing) {
     existing.qty++;
   } else {
     cart.push({ ...product, qty: 1 });
   }
+
+  saveCart();
   renderCart();
   updateCartCount();
+
   showToast(`✓ ${product.name} added to cart`);
 }
 
 function removeFromCart(id) {
   cart = cart.filter((i) => i.id !== id);
+  saveCart();
   renderCart();
   updateCartCount();
 }
@@ -73,7 +77,6 @@ function renderCart() {
   if (cart.length === 0) {
     empty.style.display = "flex";
     footer.style.display = "none";
-    // clear items except empty div
     Array.from(list.querySelectorAll(".cart-item")).forEach((el) =>
       el.remove(),
     );
@@ -83,7 +86,6 @@ function renderCart() {
   empty.style.display = "none";
   footer.style.display = "flex";
 
-  // re-render items
   Array.from(list.querySelectorAll(".cart-item")).forEach((el) => el.remove());
 
   cart.forEach((item) => {
@@ -113,6 +115,7 @@ function openCart() {
   document.getElementById("cart-overlay").classList.add("visible");
   document.body.style.overflow = "hidden";
 }
+
 function closeCart() {
   document.getElementById("cart-sidebar").classList.remove("open");
   document.getElementById("cart-overlay").classList.remove("visible");
@@ -139,51 +142,6 @@ document.querySelectorAll(".add-to-cart").forEach((btn) => {
       this.textContent = orig;
       this.classList.remove("added");
     }, 1500);
-
-    // track recently viewed
-    addToRecentlyViewed(product);
-  });
-});
-
-/* ── WISHLIST ───────────────────────────────────────────────*/
-document.querySelectorAll(".wishlist-toggle").forEach((btn) => {
-  btn.addEventListener("click", function () {
-    const card = this.closest(".product-card");
-    const product = getProductData(card);
-    const idx = wishlist.findIndex((i) => i.id === product.id);
-    const icon = this.querySelector("i");
-
-    if (idx === -1) {
-      wishlist.push(product);
-      icon.classList.replace("far", "fas");
-      this.style.color = "#e74c3c";
-      showToast(`♥ ${product.name} added to wishlist`);
-    } else {
-      wishlist.splice(idx, 1);
-      icon.classList.replace("fas", "far");
-      this.style.color = "";
-      showToast(`Removed from wishlist`);
-    }
-
-    updateWishlistCount();
-  });
-});
-
-function updateWishlistCount() {
-  const el = document.getElementById("wishlist-count");
-  el.textContent = wishlist.length;
-  el.style.display = wishlist.length > 0 ? "flex" : "none";
-}
-
-/* ── WHATSAPP — CARD BUTTON ─────────────────────────────────*/
-document.querySelectorAll(".whatsapp-card-btn").forEach((btn) => {
-  btn.addEventListener("click", function () {
-    const card = this.closest(".product-card");
-    const p = getProductData(card);
-    const msg = encodeURIComponent(
-      `Hi HealthyFlourish! I'd like to order:\n\n*${p.name}*\nPrice: ${formatPrice(p.price)}\n\nPlease confirm availability.`,
-    );
-    window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, "_blank");
   });
 });
 
@@ -202,8 +160,6 @@ function openQuickView(card) {
 
   document.getElementById("quickview-overlay").classList.add("open");
   document.body.style.overflow = "hidden";
-
-  addToRecentlyViewed(p);
 }
 
 function closeQuickView() {
@@ -231,6 +187,7 @@ document.getElementById("qty-minus").addEventListener("click", () => {
     document.getElementById("qty-val").textContent = qtyValue;
   }
 });
+
 document.getElementById("qty-plus").addEventListener("click", () => {
   qtyValue++;
   document.getElementById("qty-val").textContent = qtyValue;
@@ -254,42 +211,47 @@ document.getElementById("qv-wa-btn").addEventListener("click", () => {
   window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, "_blank");
 });
 
+/* ── WHATSAPP — CARD BUTTON ─────────────────────────────────*/
+document.querySelectorAll(".whatsapp-card-btn").forEach((btn) => {
+  btn.addEventListener("click", function () {
+    const card = this.closest(".product-card");
+    const p = getProductData(card);
+    const msg = encodeURIComponent(
+      `Hi HealthyFlourish! I'd like to order:\n\n*${p.name}*\nPrice: ${formatPrice(p.price)}\n\nPlease confirm availability.`,
+    );
+    window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, "_blank");
+  });
+});
+
 /* ── PAYMENT MODAL ──────────────────────────────────────────*/
 function openPaymentModal() {
-  // close quick view if open
   document.getElementById("quickview-overlay").classList.remove("open");
   document.getElementById("payment-overlay").classList.add("open");
   document.body.style.overflow = "hidden";
 }
+
 function closePaymentModal() {
   document.getElementById("payment-overlay").classList.remove("open");
   document.body.style.overflow = "";
 }
 
 // All triggers that open payment modal
-document
-  .querySelectorAll(".open-payment-modal, #hero-pay-btn, #how-to-pay-nav")
-  .forEach((el) => {
-    el.addEventListener("click", (e) => {
-      e.preventDefault();
-      openPaymentModal();
-    });
+document.querySelectorAll(".open-payment-modal").forEach((el) => {
+  el.addEventListener("click", (e) => {
+    e.preventDefault();
+    openPaymentModal();
   });
+});
 
 document
   .getElementById("payment-close")
   .addEventListener("click", closePaymentModal);
+
 document
   .getElementById("payment-overlay")
   .addEventListener("click", function (e) {
     if (e.target === this) closePaymentModal();
   });
-
-// QV pay link
-document.querySelector(".qv-pay-note a")?.addEventListener("click", (e) => {
-  e.preventDefault();
-  openPaymentModal();
-});
 
 // Payment tabs
 document.querySelectorAll(".pay-tab").forEach((tab) => {
@@ -305,108 +267,13 @@ document.querySelectorAll(".pay-tab").forEach((tab) => {
   });
 });
 
-/* ── STICKY ADD TO CART BAR ─────────────────────────────────*/
-let stickyProduct = null;
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (!entry.isIntersecting) {
-        const card = entry.target;
-        const disabled = card.querySelector(".card-cta[disabled]");
-        if (disabled) return; // skip sold out
-
-        const p = getProductData(card);
-        stickyProduct = p;
-
-        document.getElementById("sticky-img").src = p.img;
-        document.getElementById("sticky-name").textContent = p.name;
-        document.getElementById("sticky-price").textContent = formatPrice(
-          p.price,
-        );
-        document.getElementById("sticky-bar").classList.add("visible");
-      }
-    });
-  },
-  { threshold: 0, rootMargin: "-80px 0px 0px 0px" },
-);
-
-document
-  .querySelectorAll(".product-card")
-  .forEach((card) => observer.observe(card));
-
-// Hide sticky when back at top
-window.addEventListener("scroll", () => {
-  if (window.scrollY < 300) {
-    document.getElementById("sticky-bar").classList.remove("visible");
-  }
-});
-
-document.getElementById("sticky-close").addEventListener("click", () => {
-  document.getElementById("sticky-bar").classList.remove("visible");
-});
-
-document.getElementById("sticky-add-btn").addEventListener("click", () => {
-  if (stickyProduct) {
-    addToCart(stickyProduct);
-    document.getElementById("sticky-bar").classList.remove("visible");
-    openCart();
-  }
-});
-
-document.getElementById("sticky-wa-btn").addEventListener("click", () => {
-  if (!stickyProduct) return;
-  const p = stickyProduct;
-  const msg = encodeURIComponent(
-    `Hi HealthyFlourish! I'd like to order:\n\n*${p.name}*\nPrice: ${formatPrice(p.price)}\n\nPlease confirm availability.`,
-  );
-  window.open(`https://wa.me/${WA_NUMBER}?text=${msg}`, "_blank");
-});
-
-/* ── RECENTLY VIEWED ─────────────────────────────────────────*/
-function addToRecentlyViewed(product) {
-  if (recentlyViewed.find((p) => p.id === product.id)) return;
-  recentlyViewed.unshift(product);
-  if (recentlyViewed.length > 6) recentlyViewed.pop();
-  renderRecentlyViewed();
-}
-
-function renderRecentlyViewed() {
-  const section = document.getElementById("recently-viewed");
-  const list = document.getElementById("recently-viewed-list");
-
-  if (recentlyViewed.length === 0) {
-    section.style.display = "none";
-    return;
-  }
-  section.style.display = "block";
-
-  list.innerHTML = "";
-  recentlyViewed.forEach((p) => {
-    const item = document.createElement("div");
-    item.className = "rv-item";
-    item.innerHTML = `
-      <img src="${p.img}" alt="${p.name}" loading="lazy" />
-      <div class="rv-item-body">
-        <p class="rv-item-name">${p.name}</p>
-        <p class="rv-item-price">${formatPrice(p.price)}</p>
-      </div>
-    `;
-    item.addEventListener("click", () => {
-      // find card and open quick view
-      const card = document.querySelector(`.product-card[data-id="${p.id}"]`);
-      if (card) openQuickView(card);
-    });
-    list.appendChild(item);
-  });
-}
-
 /* ── MOBILE MENU ─────────────────────────────────────────────*/
 document.getElementById("menu-toggle").addEventListener("click", () => {
   document.getElementById("mobile-drawer").classList.add("open");
   document.getElementById("drawer-overlay").classList.add("visible");
   document.body.style.overflow = "hidden";
 });
+
 ["drawer-close", "drawer-overlay"].forEach((id) => {
   document.getElementById(id).addEventListener("click", () => {
     document.getElementById("mobile-drawer").classList.remove("open");
@@ -439,7 +306,6 @@ document.getElementById("filter-toggle").addEventListener("click", () => {
   }
 });
 
-// close mobile sidebar via overlay
 document.getElementById("drawer-overlay").addEventListener("click", () => {
   const sidebar = document.getElementById("filter-sidebar");
   if (sidebar.classList.contains("mobile-open")) {
@@ -472,14 +338,18 @@ document.querySelectorAll(".filter-tag button").forEach((btn) => {
 });
 
 /* ── SMOOTH SCROLL FOR HERO BUTTON ──────────────────────────*/
-document
-  .querySelector('[href="#collection"]')
-  ?.addEventListener("click", (e) => {
+document.querySelectorAll('a[href^="#"]').forEach((link) => {
+  link.addEventListener("click", function (e) {
+    const href = this.getAttribute("href");
+    if (href === "#") return;
+
     e.preventDefault();
-    document
-      .getElementById("collection")
-      ?.scrollIntoView({ behavior: "smooth" });
+    const target = document.querySelector(href);
+    if (target) {
+      target.scrollIntoView({ behavior: "smooth" });
+    }
   });
+});
 
 /* ── STAGGERED CARD ANIMATION ────────────────────────────────*/
 document.querySelectorAll(".product-card").forEach((card, i) => {
@@ -491,7 +361,7 @@ const searchInput = document.querySelector(".header-left .search-input");
 const mobileSearchInput = document.getElementById("mobile-search-input");
 const allCards = document.querySelectorAll(".product-card");
 
-// Create a "no results" message element and inject it into the grid
+// Create a "no results" message element
 const noResults = document.createElement("div");
 noResults.id = "no-results-msg";
 noResults.style.cssText = `
@@ -507,7 +377,6 @@ noResults.innerHTML = `
 `;
 document.getElementById("product-grid").appendChild(noResults);
 
-// Update the product count display
 const countDisplay = document.querySelector(".collection-count");
 const totalProducts = allCards.length;
 
@@ -541,12 +410,13 @@ function runSearch(query) {
 searchInput.addEventListener("input", function () {
   runSearch(this.value);
 });
+
 mobileSearchInput.addEventListener("input", function () {
-  searchInput.value = this.value; // keep in sync
+  searchInput.value = this.value;
   runSearch(this.value);
 });
 
-// Escape clears both
+// Escape clears search
 [searchInput, mobileSearchInput].forEach((inp) => {
   inp.addEventListener("keydown", function (e) {
     if (e.key === "Escape") {
@@ -561,4 +431,3 @@ mobileSearchInput.addEventListener("input", function () {
 /* ── INIT ────────────────────────────────────────────────────*/
 renderCart();
 updateCartCount();
-updateWishlistCount();
